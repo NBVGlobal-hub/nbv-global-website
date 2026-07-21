@@ -39,6 +39,34 @@
     els.forEach(function (el) { el.classList.add('in'); });
   }
 
+  // Certificate lightbox (Quality page)
+  var lightbox = document.getElementById('certLightbox');
+  if (lightbox) {
+    var lbImg = document.getElementById('certLightboxImg');
+    var lbClose = lightbox.querySelector('.cert-lightbox-close');
+    document.querySelectorAll('.cert-card[data-cert-img]').forEach(function (card) {
+      card.addEventListener('click', function () {
+        lbImg.src = card.getAttribute('data-cert-img');
+        lbImg.alt = card.getAttribute('data-cert-title') || 'Certificate';
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLightbox(); });
+  }
+
+  // If arriving via #certifications link, scroll there after load
+  if (window.location.hash === '#certifications') {
+    var certSection = document.getElementById('certifications');
+    if (certSection) setTimeout(function () { certSection.scrollIntoView({ behavior: 'smooth' }); }, 60);
+  }
+
   // Contact form (demo — shows confirmation, does not send yet)
   var form = document.getElementById('enquiryForm');
   if (form) {

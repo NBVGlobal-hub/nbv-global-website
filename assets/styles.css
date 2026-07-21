@@ -292,8 +292,42 @@ section{padding:clamp(64px,9vw,120px) 0}
 
 /* ---------- Footer ---------- */
 .cert-strip{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.cert-badge{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;color:#c3cbd4;padding:8px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;background:rgba(255,255,255,.03)}
+.cert-badge{position:relative;display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;color:#c3cbd4;padding:8px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;background:rgba(255,255,255,.03);text-decoration:none;cursor:pointer;transition:.25s var(--ease)}
+.cert-badge:hover{border-color:var(--amber-soft);color:#fff;background:rgba(255,255,255,.07)}
 .cert-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);flex-shrink:0}
+
+/* Hover preview popup on footer cert badges */
+.cert-badge .cert-preview{
+  position:absolute;bottom:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(6px);
+  width:180px;background:#fff;border-radius:10px;padding:6px;box-shadow:0 20px 45px -12px rgba(0,0,0,.55);
+  opacity:0;visibility:hidden;transition:.25s var(--ease);pointer-events:none;z-index:50;
+}
+.cert-badge .cert-preview img{width:100%;display:block;border-radius:6px}
+.cert-badge .cert-preview span{display:block;font-family:var(--sans);font-size:.68rem;color:var(--slate);text-align:center;padding-top:6px;letter-spacing:0}
+.cert-badge:hover .cert-preview{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+@media (max-width:640px){.cert-badge .cert-preview{display:none}}
+
+/* Certificate lightbox on Quality page */
+.cert-card{cursor:pointer}
+.cert-card .cert-thumb{margin-top:14px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.cert-card .cert-thumb img{width:100%;display:block;transition:.35s var(--ease)}
+.cert-card:hover .cert-thumb img{transform:scale(1.03)}
+.cert-card .cert-view{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-deep)}
+
+.cert-lightbox{
+  position:fixed;inset:0;background:rgba(13,21,31,.88);z-index:1000;
+  display:flex;align-items:center;justify-content:center;padding:30px;
+  opacity:0;visibility:hidden;transition:.25s var(--ease);
+}
+.cert-lightbox.open{opacity:1;visibility:visible}
+.cert-lightbox-inner{max-width:640px;width:100%;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 30px 80px -20px rgba(0,0,0,.6)}
+.cert-lightbox-inner img{width:100%;display:block;max-height:78vh;object-fit:contain;background:#fff}
+.cert-lightbox-close{
+  position:absolute;top:22px;right:26px;width:42px;height:42px;border-radius:50%;
+  background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);
+  font-size:1.3rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+}
+.cert-lightbox-close:hover{background:rgba(255,255,255,.22)}
 
 .qa-certs{padding:0 0 90px}
 .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
