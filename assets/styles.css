@@ -93,8 +93,8 @@ p{color:#3a4550}
 .site-header.scrolled .header-inner{padding:10px 0}
 .brand{display:flex;align-items:center;position:relative}
 /* logo: always dark version on light header; scales down on mobile */
-.brand img{height:clamp(42px,5.6vw,58px);width:auto;transition:.3s}
-.site-header.scrolled .brand img{height:clamp(40px,5.2vw,52px)}
+.brand img{height:clamp(50px,6.8vw,70px);width:auto;transition:.3s}
+.site-header.scrolled .brand img{height:clamp(48px,6.3vw,63px)}
 .logo-light{display:none}
 .logo-dark{opacity:1}
 .nav{margin-left:auto}
