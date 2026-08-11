@@ -380,6 +380,7 @@ section{padding:clamp(64px,9vw,120px) 0}
   .prod-row .prod-row-img,.prod-row.reverse .prod-row-img{order:-1}
   .footer-grid{grid-template-columns:1fr 1fr}
   .two-col-media{max-width:440px}
+  .brand img{margin-left:12px}
 }
 @media (max-width:600px){
   .prod-grid,.why-grid,.val-grid,.specs-grid,.steps,.market-grid,.row2,.footer-grid{grid-template-columns:1fr}
