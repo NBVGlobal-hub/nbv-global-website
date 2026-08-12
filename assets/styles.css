@@ -298,8 +298,8 @@ section{padding:clamp(64px,9vw,120px) 0}
 
 /* ---------- Footer ---------- */
 .cert-strip{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.cert-badge{position:relative;display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;color:#c3cbd4;padding:8px 14px;border:1px solid rgba(255,255,255,.14);border-radius:100px;background:rgba(255,255,255,.03);text-decoration:none;cursor:pointer;transition:.25s var(--ease)}
-.cert-badge:hover{border-color:var(--amber-soft);color:#fff;background:rgba(255,255,255,.07)}
+.cert-badge{position:relative;display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;color:var(--blue-deep);padding:8px 14px;border:1px solid var(--line);border-radius:100px;background:var(--paper-2);text-decoration:none;cursor:pointer;transition:.25s var(--ease)}
+.cert-badge:hover{border-color:var(--amber);color:var(--ink);background:#fff}
 .cert-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);flex-shrink:0}
 
 /* Hover preview popup on footer cert badges */
@@ -344,18 +344,17 @@ section{padding:clamp(64px,9vw,120px) 0}
 .cert-card .cert-valid{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-top:.6rem;display:block}
 @media (max-width:860px){.cert-grid{grid-template-columns:1fr}}
 
-.site-footer{background:var(--ink-2);color:#c3cbd4;padding:70px 0 30px}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.3fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.1)}
-.foot-word{font-family:var(--serif);font-size:1.5rem;color:#fff;margin-bottom:.8rem;font-weight:500}
-.foot-word span{color:var(--amber-soft);font-style:italic;font-size:1.1rem}
-.foot-brand p{font-size:.92rem;max-width:34ch}
-.foot-col h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-soft);margin-bottom:1.1rem;font-weight:500}
-.foot-col a{display:block;padding:6px 0;font-size:.94rem;color:#c3cbd4;transition:.2s}
-.foot-col a:hover{color:#fff;padding-left:5px}
-.foot-contact p{font-size:.92rem;margin-bottom:.9rem;line-height:1.7}
-.foot-contact a:hover{color:var(--amber-soft)}
-.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:.82rem;color:#8a95a1}
-.foot-tag{font-family:var(--mono);letter-spacing:.1em;color:var(--amber-soft)}
+.site-footer{background:var(--paper);color:var(--slate);padding:60px 0 30px;border-top:1px solid var(--line)}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.3fr;gap:40px;padding-bottom:44px;border-bottom:1px solid var(--line)}
+.foot-logo{height:44px;width:auto;margin-bottom:14px;display:block}
+.foot-brand p{font-size:.92rem;max-width:34ch;color:var(--slate)}
+.foot-col h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:1.1rem;font-weight:500}
+.foot-col a{display:block;padding:6px 0;font-size:.94rem;color:var(--ink);transition:.2s}
+.foot-col a:hover{color:var(--blue);padding-left:5px}
+.foot-contact p{font-size:.92rem;margin-bottom:.9rem;line-height:1.7;color:var(--ink)}
+.foot-contact a:hover{color:var(--blue)}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:.82rem;color:var(--slate)}
+.foot-tag{font-family:var(--mono);letter-spacing:.1em;color:var(--amber)}
 
 /* whatsapp */
 .whatsapp{position:fixed;right:22px;bottom:22px;z-index:80;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px -6px rgba(37,211,102,.6);transition:.3s var(--ease)}
